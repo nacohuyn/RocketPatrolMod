@@ -5,15 +5,16 @@ class Menu extends Phaser.Scene {
 
     preload() {
         // load audio
-        this.load.audio('sfx_select', './assets/blip_select12.wav');
-        this.load.audio('sfx_explosion', './assets/explosion38.wav');
-        this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
-    }
+        this.load.audio('sfx_select', './modassets/okay.wav');
+        this.load.audio('sfx_explosion', './modassets/cantbelieve.wav');
+        this.load.audio('sfx_rocket', './modassets/yeet.wav');
+        //this.load.audio('bgm', './modassets/Chip_Astley.wav');
+    }   
 
     create() {
         // menu display
         let menuConfig = {
-            fontFamily: 'Courier',
+            fontFamily: 'Comic Sans MS',
             fontSize: '28px',
             backgroundColor: '#F3B141',
             color: '#843605',
@@ -30,7 +31,7 @@ class Menu extends Phaser.Scene {
         let centerY = game.config.height/2;
         let textSpacer = 64;
 
-        this.add.text(centerX, centerY- textSpacer, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
+        this.add.text(centerX, centerY- textSpacer, 'ROCKET PATROL MOD', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY, 'Use ←→ arrows to move & (F) to Fire', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
@@ -46,7 +47,7 @@ class Menu extends Phaser.Scene {
             // easy mode
             game.settings = {
                 spaceshipSpeed: 3,
-                gameTimer: 60000    
+                gameTimer: 210000    
             }
             this.sound.play('sfx_select');
             this.scene.start("playScene");    
@@ -55,7 +56,7 @@ class Menu extends Phaser.Scene {
             // hard mode
             game.settings = {
                 spaceshipSpeed: 4,
-                gameTimer: 45000    
+                gameTimer: 210000    
             }
             this.sound.play('sfx_select');
             this.scene.start("playScene");    

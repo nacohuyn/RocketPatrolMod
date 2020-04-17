@@ -56,7 +56,7 @@ class Play extends Phaser.Scene {
             fontSize: '28px',
             backgroundColor: '#F3B141',
             color: '#843605',
-            align: 'right',
+            align: 'left',
             padding: {
                 top: 5,
                 bottom: 5,
@@ -134,6 +134,6 @@ class Play extends Phaser.Scene {
         this.p1Score += ship.points;
         this.scoreLeft.text = this.p1Score;     
         // play sound
-        this.sound.play('sfx_explosion');  
+        this.sound.play(Phaser.Math.RND.pick(['sfx_explosion', 'sfx_explosion2', 'sfx_explosion3', 'sfx_explosion4']));  
     }
 }

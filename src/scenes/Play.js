@@ -10,6 +10,7 @@ class Play extends Phaser.Scene {
         this.load.image('scrollingground', './modassets/scrollingground.png');
         this.load.image('jimmybarnes', './modassets/jimmybarnes.png');
         this.load.image('uiframe', './modassets/uiframe.png');
+        this.load.image('mafiaworks', './modassets/mafiaworks.png');
         this.load.audio('bgm', './modassets/Chip_Astley.wav');
         // load spritesheet
         this.load.spritesheet('explosion', './modassets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
@@ -22,6 +23,7 @@ class Play extends Phaser.Scene {
         this.scrollingground = this.add.tileSprite(0, 0, 640, 480, 'scrollingground').setOrigin(0, 0);
 
         this.uiframe = this.add.tileSprite(0, 0, 640, 480, 'uiframe').setOrigin(0, 0);
+        this.mafiaworks = this.add.tileSprite(0, 0, 200, 200, 'mafiaworks'). setOrigin(0, 0);
 
         // add rocket (p1)
         this.p1Rocket = new Rocket(this, game.config.width/2 - 8, 431, 'sonicrocket').setScale(0.5, 0.5).setOrigin(0, 0);
@@ -58,7 +60,7 @@ class Play extends Phaser.Scene {
             },
             fixedWidth: 170
         }
-        this.scoreLeft = this.add.text(69, 54, "Score: " + this.p1Score, scoreConfig);
+        this.scoreLeft = this.add.text(100, 15, "Score: " + this.p1Score, scoreConfig);
 
         // game over flag
         this.gameOver = false;

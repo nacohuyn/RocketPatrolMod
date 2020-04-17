@@ -21,8 +21,8 @@ class Menu extends Phaser.Scene {
         let menuConfig = {
             fontFamily: 'Comic Sans MS',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
-            color: '#843605',
+            backgroundColor: '#FFFFFF',
+            color: '#FF0000',
             align: 'left',
             wordWrap: { width: 500, useAdvancedWrap: true },
             padding: {
@@ -36,8 +36,8 @@ class Menu extends Phaser.Scene {
         let menuConfig2 = {
             fontFamily: 'Comic Sans MS',
             fontSize: '14px',
-            backgroundColor: '#F3B141',
-            color: '#843605',
+            backgroundColor: '#FFFFFF',
+            color: '#ffc000',
             align: 'left',
             wordWrap: { width: 450, useAdvancedWrap: true },
             padding: {
@@ -53,7 +53,7 @@ class Menu extends Phaser.Scene {
         let textSpacer = 64;
 
         this.add.text(centerX, centerY - (textSpacer*2), 'SAVE MEME SECTOR 120', menuConfig).setOrigin(0.5);
-        this.add.text(centerX, centerY - textSpacer, 'Supreme Leader Elizabeth has commanded General Murmur to send his legion to invade Meme Sector 120! President Nathan has issued the use of his Sonic Missile Defense to combat the onslaught.', menuConfig2).setOrigin(0.5);
+        this.add.text(centerX, centerY - textSpacer, 'Supreme Leader Elizabeth has commanded General Murmur to send his legion to invade Meme Sector 120! President Nathan has issued the use of his Sonic Missile Defense to combat the onslaught along with Musician R.A. to provide morale.', menuConfig2).setOrigin(0.5);
         //this.add.text(centerX, centerY - 15, 'President Nathan has issued the use of his Sonic Missile Defense to combat the onslaught.', menuConfig2).setOrigin(0.5);
         this.add.text(centerX, centerY + 30, 'Use ←→ arrows to move & (F) to Fire a Sonic Defense Missile', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';

@@ -9,6 +9,7 @@ class Play extends Phaser.Scene {
         this.load.image('catspaceship', './modassets/catspaceship.png');
         this.load.image('scrollingground', './modassets/scrollingground.png');
         this.load.image('jimmybarnes', './modassets/jimmybarnes.png');
+        this.load.image('uiframe', './modassets/uiframe.png');
         this.load.audio('bgm', './modassets/Chip_Astley.wav');
         // load spritesheet
         this.load.spritesheet('explosion', './modassets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
@@ -20,13 +21,7 @@ class Play extends Phaser.Scene {
         this.jimmybarnes = this.add.tileSprite(0, 0, 640, 480, 'jimmybarnes').setOrigin(0, 0);
         this.scrollingground = this.add.tileSprite(0, 0, 640, 480, 'scrollingground').setOrigin(0, 0);
 
-        // white rectangle borders
-        this.add.rectangle(5, 5, 630, 32, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(5, 443, 630, 32, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(5, 5, 32, 455, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(603, 5, 32, 455, 0xFFFFFF).setOrigin(0, 0);
-        // green UI background
-        this.add.rectangle(37, 42, 566, 64, 0x00FF00).setOrigin(0, 0);
+        this.uiframe = this.add.tileSprite(0, 0, 640, 480, 'uiframe').setOrigin(0, 0);
 
         // add rocket (p1)
         this.p1Rocket = new Rocket(this, game.config.width/2 - 8, 431, 'sonicrocket').setScale(0.5, 0.5).setOrigin(0, 0);
@@ -54,16 +49,16 @@ class Play extends Phaser.Scene {
         let scoreConfig = {
             fontFamily: 'Comic Sans MS',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
-            color: '#843605',
+            backgroundColor: '#FFFFFF',
+            color: '#000000',
             align: 'left',
             padding: {
                 top: 5,
                 bottom: 5,
             },
-            fixedWidth: 100
+            fixedWidth: 170
         }
-        this.scoreLeft = this.add.text(69, 54, this.p1Score, scoreConfig);
+        this.scoreLeft = this.add.text(69, 54, "Score: " + this.p1Score, scoreConfig);
 
         // game over flag
         this.gameOver = false;
@@ -132,7 +127,7 @@ class Play extends Phaser.Scene {
         });
         // score increment and repaint
         this.p1Score += ship.points;
-        this.scoreLeft.text = this.p1Score;     
+        this.scoreLeft.text = "Score: " + this.p1Score;     
         // play sound
         this.sound.play(Phaser.Math.RND.pick(['sfx_explosion', 'sfx_explosion2', 'sfx_explosion3', 'sfx_explosion4']));  
     }
